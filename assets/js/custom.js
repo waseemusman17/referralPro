@@ -5,7 +5,7 @@ $(document).ready(function(){
         margin:50,
         nav:true,
         dots:false,
-        navText:["<img src='./assets/img/icon-left.svg' >","<img src='./assets/img/icon-right.svg' >"],
+        navText:["<img src='http://localhost/referral/wp-content/uploads/2020/11/icon-left.svg' >","<img src='http://localhost/referral/wp-content/uploads/2020/11/icon-right.svg' >"],
         responsive:{
             0:{
                 items:1
@@ -27,7 +27,7 @@ $(document).ready(function(){
         nav:true,
         items:1,
         dots:false,
-        navText: ["<div id='counter_banner'></div><img src='./assets/img/icon-left.svg' > ","<img src='./assets/img/icon-right.svg' >"],
+        navText: ["<div id='counter_banner'></div><img src='http://localhost/referral/wp-content/uploads/2020/11/icon-left.svg' > ","<img src='http://localhost/referral/wp-content/uploads/2020/11/icon-right.svg' >"],
             onInitialized  : counter, //When the plugin has initialized.
             onTranslated : counter //When the translation of the stage has finished.
     });

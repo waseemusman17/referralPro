@@ -19,31 +19,12 @@ add_theme_support('custom-logo' , array(
 ));
 
 // Menu Bar
-function wpb_custom_new_menu(){
-    register_nav_menu(
-        array(
-            'Header-menu' => __('Header Menu')
-        )
-    );
-}
+// function wpb_custom_new_menu(){
+//     register_nav_menu(
+//         array(
+//             'header-menu' => __('Header Menu')
+//         )
+//     );
+// }
 
-add_action('init' , 'wpb_custom_new_menu');
-
-
-//   ACF Plugin Support
-add_action('acf/init', 'my_acf_op_init');
-function my_acf_op_init() {
-
-    // Check function exists.
-    if( function_exists('acf_add_options_page') ) {
-
-        // Register options page.
-        $option_page = acf_add_options_page(array(
-            'page_title'    => __('Theme General Settings'),
-            'menu_title'    => __('Theme Settings'),
-            'menu_slug'     => 'theme-general-settings',
-            'capability'    => 'edit_posts',
-            'redirect'      => false
-        ));
-    }
-} 
+// add_action('init' , 'wpb_custom_new_menu');
