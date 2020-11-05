@@ -668,6 +668,68 @@ p.aus-info-title {
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Service Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.sip-section {
+    width: 100%;
+    height: 600px;
+    
+}
+
+.sip-content {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.sip-content h2{
+    color: #fff;
+    font-family: 'Anvire-Heavy';
+}
+.spt-section {
+    width: 100%;
+    padding: 100px 0px;
+}
+.spt-title {
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 auto 100px;
+    font-size: 30px;
+    font-family: 'Anvire-Heavy';
+}
+.spt-post-box {
+    display: flex;
+    justify-content: space-around;
+}
+.spt-box-info {
+    width: 45%;
+}
+.spt-box-img {
+    width: 45%;
+    position: relative;
+}
+.spt-box-img img {
+    width: 100%;
+}
+.spt-box-img::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 175px;
+    height: 180px;
+    background-image: url();
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        Media Query
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */

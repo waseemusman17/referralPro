@@ -20,12 +20,17 @@
                     </span>
                 </div>
 
-                <ul class="footer-menu">
+                <!-- <ul class="footer-menu">
                     <li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/green-arrow.svg" alt=""> Service</a></li>
                     <li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/green-arrow.svg" alt=""> Portfolio</a></li>
                     <li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/green-arrow.svg" alt=""> Testimonials</a></li>
                     <li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/green-arrow.svg" alt=""> Careers</a></li>
-                </ul>
+                </ul> -->
+                <?php
+                    wp_nav_menu( array( 
+                        'theme_location' => 'header-menu', 
+                        'container_class' => 'footer-menu' ) ); 
+                ?>
 
 
                 <div class="footer-social d-flex mt-5">

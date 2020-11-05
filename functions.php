@@ -19,12 +19,12 @@ add_theme_support('custom-logo' , array(
 ));
 
 // Menu Bar
-// function wpb_custom_new_menu(){
-//     register_nav_menu(
-//         array(
-//             'header-menu' => __('Header Menu')
-//         )
-//     );
-// }
+function wpb_custom_new_menu() {
+    register_nav_menus(
+        array(
+            'header-menu' => __( 'Header Menu' )
+        )
+    );
+}
 
-// add_action('init' , 'wpb_custom_new_menu');
+add_action( 'init', 'wpb_custom_new_menu' );

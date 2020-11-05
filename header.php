@@ -25,12 +25,10 @@
                 </div>
                 <div class="site-menu">
                     <nav>
-                        <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Service</a></li>
-                            <li><a href="">Portfolio</a></li>
-                            <li><a href="">Testimonials</a></li>
-                        </ul>
+                    <?php
+                        wp_nav_menu( array( 
+                            'theme_location' => 'header-menu' ) ); 
+                    ?>
                     </nav>
                     <div class="contact-us-link">
                         <a href="">Contact Us <img src="<?php echo get_template_directory_uri();?>/assets/img/btn-arrow.svg" alt=""></a>
