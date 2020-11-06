@@ -26,6 +26,7 @@ $(document).ready(function(){
         margin:10,
         nav:true,
         items:1,
+        loop:false,
         dots:false,
         navText: ["<div id='counter_banner'></div><img src='http://localhost/referral/wp-content/uploads/2020/11/icon-left.svg' > ","<img src='http://localhost/referral/wp-content/uploads/2020/11/icon-right.svg' >"],
             onInitialized  : counter, //When the plugin has initialized.
@@ -35,7 +36,7 @@ $(document).ready(function(){
     function counter(event) {
         var element   = event.target;         // DOM element, in this example .owl-carousel
         var items     = event.item.count;     // Number of items
-        var item      = event.item.index - 1;     // Position of the current item
+        var item      = event.item.index + 1;     // Position of the current item
 
          // it loop is true then reset counter from 1
         if(item > items) {
