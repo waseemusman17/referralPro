@@ -674,7 +674,8 @@ p.aus-info-title {
 .sip-section {
     width: 100%;
     height: 600px;
-    
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .sip-content {
@@ -687,6 +688,9 @@ p.aus-info-title {
 .sip-content h2{
     color: #fff;
     font-family: 'Anvire-Heavy';
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
 }
 .spt-section {
     width: 100%;
@@ -862,9 +866,81 @@ p.aus-info-title {
 .pricing-varies:hover{
     color: rgba(0,0,0,0.7);
 }
+.services-template-default .sip-section {
+    background-color: rgba(0,0,0,0.2);
+    background-blend-mode: overlay;
+}
 
 
 
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Service Details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.pdc-section {
+    width: 100%;
+    padding: 100px 0px;
+}
+.cci-info {
+    padding-top: 50px;
+}
+.cci-info .quote-btn img{
+    margin-left: 10px;
+}
+.cci-info ul{
+    margin-bottom: 30px;
+}
+.cci-info ul li{
+    font-size: 18px;
+    font-family: 'Anvire-Book';
+    color: #575757;
+}
+.cci-info ul li::before{
+    content: '→';
+    color: #33B34A;
+    padding-right: 5px;
+}
+.pdc-content p {
+    color: rgba(0,0,0,0.6);
+    font-family: 'Anvire-Book';
+}
+
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Contact Us
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.cls-content {
+    position: relative;
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background-color: #fff;
+    margin-top: -100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.cls-box {
+    display: flex;
+}
+.cls-box-img {
+    margin-right: 15px;
+}
+.cls-box-info h4 {
+    font-size: 20px;
+    color: #333333;
+    padding-bottom: 10px;
+}
+.cls-box-info a {
+    font-size: 14px;
+    color: #666666 !important;
+    font-family: 'Anvire-Book';
+}
 
 
 
