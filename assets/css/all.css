@@ -494,7 +494,9 @@ p.aus-info-title {
 }
 .pfs-item-img {
     width: 40%;
+    position: relative;
 }
+
 .pfs-item-img img {
     width: 100%;
 }
@@ -676,6 +678,9 @@ p.aus-info-title {
     height: 600px;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0,0,0,0.2);
+    background-blend-mode: overlay;
 }
 
 .sip-content {
@@ -866,10 +871,10 @@ p.aus-info-title {
 .pricing-varies:hover{
     color: rgba(0,0,0,0.7);
 }
-.services-template-default .sip-section {
+/* .services-template-default .sip-section {
     background-color: rgba(0,0,0,0.2);
     background-blend-mode: overlay;
-}
+} */
 
 
 
@@ -1011,6 +1016,82 @@ p.aus-info-title {
 .faq-btn.collapsed::before{
     content: '+';
 }
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Portfolio
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+
+
+
+
+.page-template-portfolio .pfs-item-img::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #162B42;
+    z-index: -1;
+}
+.page-template-portfolio .pfs-item-img img{
+    padding: 50px 0px 50px 50px;
+}
+.page-template-portfolio .pfs-section::before{
+    display: none;
+}
+.page-template-portfolio .pfs-content{
+    padding:0px ;
+}
+.port-img {
+    width: 100%;
+    height: 350px;
+    background-color: #E8E8E8;
+    position: relative;
+}
+.port-img:hover::before{
+    content: '';
+    background-color: rgba(51, 179, 74, 0.8);
+    background-blend-mode: overlay;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.port-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.port-img-overlay{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.view-project{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    visibility: hidden;
+}
+.view-project img{
+    width: 20px;
+}
+.view-project span{
+    font-size: 12px;
+    color: #fff;
+}
+.port-img:hover .view-project{
+    visibility: visible;
+}
+
+
+
+
+
 
 
 /*

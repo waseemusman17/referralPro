@@ -70,13 +70,59 @@ function cw_post_type_Services() {
         'menu_icon' => 'dashicons-admin-home',
     );
 
-    register_post_type('Services', $args);
-    }
+register_post_type('Services', $args);
+}
 
-    add_action('init', 'cw_post_type_Services');
-    /*Custom Service Post type end*/
+add_action('init', 'cw_post_type_Services');
+/*Custom Service Post type end*/
 
 
-    /*for set featured image*/
 
-    add_theme_support( 'post-thumbnails' );
+/*Custom Portfolio Post type start*/
+function cw_post_type_Portfolio() {
+    $supports = array(
+        'title', // post title
+        'editor', // post content
+        'author', // post author
+        'thumbnail', // featured images
+        'excerpt', // post excerpt
+        'custom-fields', // custom fields
+        'comments', // post comments
+        'revisions', // post revisions
+        'post-formats', // post formats
+    );
+    $labels = array(
+        'name' => _x('Portfolio', 'plural'),
+        'singular_name' => _x('Portfolio', 'singular'),
+        'menu_name' => _x('Portfolio', 'admin menu'),
+        'name_admin_bar' => _x('Portfolio', 'admin bar'),
+        'add_new' => _x('Add New', 'add new'),
+        'add_new_item' => __('Add New Portfolio'),
+        'new_item' => __('New Portfolio'),
+        'edit_item' => __('Edit Portfolio'),
+        'view_item' => __('View Portfolio'),
+        'all_items' => __('All Portfolio'),
+        'search_items' => __('Search Portfolio'),
+        'not_found' => __('No Portfolio found.'),
+    );
+    $args = array(
+        'supports' => $supports,
+        'labels' => $labels,
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'Portfolio'),
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_icon' => 'dashicons-portfolio',
+    );
+
+register_post_type('Portfolio', $args);
+}
+
+add_action('init', 'cw_post_type_Portfolio');
+/*Custom Portfolio Post type end*/
+
+
+/*for set featured image*/
+
+add_theme_support( 'post-thumbnails' );
