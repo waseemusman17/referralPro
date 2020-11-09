@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
+    
         <!-- Site Inner Pages Banner -->
         <section class="sip-section" style="background-image:url('<?php the_post_thumbnail_url();?>')">
             <div class="container">
@@ -52,7 +53,6 @@
                 </div>
             </div>  
         </section>
-
         
     <?php endwhile; ?>
 

@@ -1044,6 +1044,27 @@ p.aus-info-title {
 .page-template-portfolio .pfs-content{
     padding:0px ;
 }
+.port-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    background-color: transparent;
+    color: #000;
+    border-radius: 70px;
+    border: 1px solid #33B34A;
+}
+.port-btn img {
+    width: 20px !important;
+}
+.port-btn:hover{
+    background-color: #33B34A;
+    color: #fff;
+}
+.port-btn:hover img{
+    filter: invert(1);
+}
 .port-img {
     width: 100%;
     height: 350px;
@@ -1090,8 +1111,101 @@ p.aus-info-title {
 
 
 
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Portfolio Details Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.single-portfolio header{
+    background-color: #000;
+}
+.pdb-content {
+    max-width: 80%;
+    margin: auto;
+}
+.pdb-section {
+    padding: 150px 0px 0px;
+    position: relative;
+}
+.pdb-section::before{
+    content: '';
+    position: absolute;
+    top: 200px;
+    left: -30px;
+    background-image: url(../img/before-4.png);
+    width: 140px;
+    height: 140px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.pdb-info h4 {
+    max-width: 400px;
+}
+.pdb-info P{
+    padding:30px 0px 50px;
+    max-width: 500px;
+}
 
 
+.dcs-section{
+    padding:100px 0px ;
+}
+.dcs-content{
+    max-width: 80%;
+    margin: auto;
+}
+.pmi-section {
+    width: 100%;
+    position: relative;
+}
+.pmi-section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 60%;
+    width: 100%;
+    background-color: #33B34A;
+    z-index: -1;
+}
+
+.pmi-content {
+    max-width: 80%;
+    height: 500px;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pmi-content img {
+    padding: 70px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.pbd-section {
+    padding: 100px 0px;
+}
+.pbd-content {
+    max-width: 80%;
+    margin: auto;
+}
+.pbd-content h5{
+    font-family: 'Anvire-Book';
+    padding-bottom: 50px;
+}
+.pbd-img .pmi-content{
+    max-width: 100%;
+    height: 400px;
+}
+.pbd-info h6{
+    max-width: 500px;
+    font-family: 'Anvire-Book';
+}
+.pbd-info p {
+    max-width: 500px;
+    padding-top: 40px;
+}
 
 
 /*

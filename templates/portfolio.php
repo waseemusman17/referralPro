@@ -42,7 +42,7 @@
                                 <div class="pfs-item-info">
                                     <h6>EXO TOE</h6>
                                     <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
-                                    <a href="" class="pfs-item-btn">VIEW PROJECT <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                                    <a href="" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                 <div class="pfs-item-info">
                                     <h6>EXO TOE</h6>
                                     <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
-                                    <a href="" class="pfs-item-btn">VIEW PROJECT <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                                    <a href="" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                 <div class="pfs-item-info">
                                     <h6>EXO TOE</h6>
                                     <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
-                                    <a href="" class="pfs-item-btn">VIEW PROJECT <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                                    <a href="" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
                                 </div>
                             </div>
                         </div>
