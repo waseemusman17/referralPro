@@ -123,6 +123,46 @@ add_action('init', 'cw_post_type_Portfolio');
 /*Custom Portfolio Post type end*/
 
 
+
+//Add Custom Taxonomy
+
+//hook into the init action and call create_book_taxonomies when it fires
+add_action( 'init', 'create_project_category_hierarchical_taxonomy', 0 );
+ 
+//create a custom taxonomy name it topics for your posts
+function create_project_category_hierarchical_taxonomy() {
+ 
+    // Add new taxonomy, make it hierarchical like categories
+    //first do the translations part for GUI
+ 
+    $labels = array(
+        'name' => _x( 'project_category', 'taxonomy general name' ),
+        'singular_name' => _x( 'project_category', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search project_category' ),
+        'all_items' => __( 'All project_category' ),
+        'parent_item' => __( 'Parent project_category' ),
+        'parent_item_colon' => __( 'Parent project_category:' ),
+        'edit_item' => __( 'Edit project_category' ), 
+        'update_item' => __( 'Update project_category' ),
+        'add_new_item' => __( 'Add New project_category' ),
+        'new_item_name' => __( 'New project_category Name' ),
+        'menu_name' => __( 'project_category' ),
+    );    
+ 
+    // Now register the taxonomy
+ 
+    register_taxonomy('project_category',array('portfolio'), array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'project_category' ),
+    ));
+ 
+}
+
+
 /*for set featured image*/
 
 add_theme_support( 'post-thumbnails' );

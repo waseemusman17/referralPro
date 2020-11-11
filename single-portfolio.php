@@ -9,12 +9,12 @@
 
                     <div class="row align-items-center">
                         <div class="col-lg-6 pdb-info">
-                            <h4>Medical Device Website Design</h4>
-                            <p>Steady and proﬁtable referral traffic requires more than quality health care. Even if the most highly reputed specialists take a passive approach to referral marketing, they often struggle to maintain a viable level of incoming referrals.</p>
-                            <a href="" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
+                            <h4><?php the_field('portfolio_title'); ?></h4>
+                            <p><?php the_field('portfolio_description'); ?></p>
+                            <a href="<?php the_field('portfolio_project_link'); ?>" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
                         </div>
                         <div class="col-lg-6 pdb-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/p1.png" alt="">
+                            <img src="<?php the_field('portfolio_image'); ?>" alt="">
                         </div>
                     </div>
 
@@ -29,10 +29,10 @@
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta sapien, vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam. Vestibulum at neque hendrerit, mollis dolor at, blandit justo. Integer ac interdum purus. In placerat lorem non quam pulvinar molestie ac eget lacus. Proin mollis lobortis porttitor. Nam in fringilla felis. Nunc non magna maximus, pulvinar justo ut, pulvinar lacus. </p>
+                            <p><?php the_field('portfolio_more_detail_left'); ?></p>
                         </div>
                         <div class="col-lg-6">
-                            <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta sapien, vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam. </p>
+                            <p><?php the_field('portfolio_more_detail_right'); ?></p>
                         </div>
 
                     </div>
@@ -45,7 +45,7 @@
         <section class="pmi-section">
             <div class="container">
                 <div class="pmi-content" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/portfolio-back.png')">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/project-1.png" alt="">
+                    <img src="<?php the_field('portfolio_main_image'); ?>" alt="">
                 </div>
             </div>
         </section>
@@ -54,15 +54,15 @@
         <section class="pbd-section">
             <div class="container">
                 <div class="pbd-content">
-                    <h5 class="text-center">Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. </h5>
+                    <h5 class="text-center"><?php the_field('portfolio_bottom_title'); ?></h5>
                     <div class="row align-items-center">
                         <div class="col-lg-6 pbd-info">
-                            <h6>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac.</h6>
-                            <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta sapien, vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam. </p>
+                            <h6><?php the_field('portfolio_bottom_inner_title'); ?></h6>
+                            <p><?php the_field('portfolio_bottom_description'); ?></p>
                         </div>
                         <div class="col-lg-6 pbd-img">
                             <div class="pmi-content" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/img/portfolio-back.png')">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/project-2.png" alt="">
+                                <img src="<?php the_field('portfolio_bottom_image'); ?>" alt="">
                             </div>
                         </div>
                     </div>
