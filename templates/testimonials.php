@@ -19,7 +19,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="tss-section">
+    <section class="tss-section scrollDiv">
         <div class="container">
             <div class="tss-content">
                 <h6 class="text-center"><?php the_field('client_review_title'); ?></h6>

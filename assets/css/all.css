@@ -396,10 +396,14 @@ p.aus-info-title {
     flex-flow: row wrap;
 }
 .svs-box {
-    width: 25%;
+    width: 24%;
+    margin-bottom: 1%;
     text-align: center;
     min-height: 300px;
+    position: relative;
+    background-color: #F8F8F8;
 }
+
 .svs-box h6 {
     padding: 40px 0px 10px;
 }
@@ -410,10 +414,29 @@ p.aus-info-title {
     width: 220px;
     height: 50px;
     background-color: #33B34A;
-    margin: 30px auto;
+    margin: 30px auto 0px;
     color: #fff;
     border-radius: 25px;
-    visibility: hidden;
+    display: none;
+}
+.svs-box-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    min-height: 300px;
+    padding: 40px;
+}
+.svs-box:hover{
+    background-color: #FFFFFF;
+    
+}
+.svs-box:hover .svs-box-content {
+    min-height: 370px;
+    z-index: 999;
+    background-color: #FFFFFF;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .svs-btn img{
     margin-left: 10px;
@@ -422,7 +445,7 @@ p.aus-info-title {
     color: #fff;
 }
 .svs-box:hover .svs-btn{
-    visibility: visible;
+    display: flex;
     
 }
 .svs-box-info {

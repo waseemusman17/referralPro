@@ -19,11 +19,11 @@
 </head>
 <body <?php body_class(); ?> >
 
-<header class="site-header">
+    <header class="site-header">
         <div class="container">
             <div class="header-row">
                 <div class="site-log">
-                    <a href="#"><img src="<?php echo get_template_directory_uri();?>/assets/img/logo.svg" alt=""></a>
+                    <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/img/logo.svg" alt=""></a>
                 </div>
                 <div class="site-menu">
                     <nav>

@@ -26,7 +26,7 @@
     </section>
 
     <!-- Service Post Section -->
-    <section class="spt-section">
+    <section class="spt-section scrollDiv">
         <div class="container">
             <div class="spt-content">
                 <p class="spt-title">Referralpro Has Helped Businesses Across The U.S. Generate Steady And Proﬁtable Referrals With Result-Driven Marketing Strategies, Captivating Website Designs, Social Media, And More.</p>

@@ -27,49 +27,37 @@
     </section>
 
     <!-- Portfolio -->
-    <section class="pfs-section">
+    <section class="pfs-section scrollDiv">
         <div class="container">
             <div class="pfs-content">           
 
                 <div class="pfs-slider">
                     <div class="owl-carousel owl-theme">
 
-                        <div class="item">
-                            <div class="pfs-item">
-                                <div class="pfs-item-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/p1.png" alt="">
-                                </div>
-                                <div class="pfs-item-info">
-                                    <h6>EXO TOE</h6>
-                                    <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
-                                    <a href="" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pfs-item">
-                                <div class="pfs-item-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/p1.png" alt="">
-                                </div>
-                                <div class="pfs-item-info">
-                                    <h6>EXO TOE</h6>
-                                    <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
-                                    <a href="" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
+                    <?php $the_query = new WP_Query(array(
+                            'post_type' => 'portfolio',
+                            'order' => 'ASC'
+                        ));
+                    ?>
+                    
+                    <?php if ( $the_query->have_posts() ) : 
+                        while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+                            <div class="item">
+                                <div class="pfs-item">
+                                    <div class="pfs-item-img">
+                                        <img src="<?php the_field('portfolio_image'); ?>" alt="">
+                                    </div>
+                                    <div class="pfs-item-info">
+                                        <h6><?php the_field('portfolio_title'); ?></h6>
+                                        <p><?php the_field('portfolio_description'); ?></p>
+                                        <a href="<?php the_field('portfolio_project_link'); ?>" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="pfs-item">
-                                <div class="pfs-item-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/p1.png" alt="">
-                                </div>
-                                <div class="pfs-item-info">
-                                    <h6>EXO TOE</h6>
-                                    <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
-                                    <a href="" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
-                                </div>
-                            </div>
-                        </div>
+
+                        <?php endwhile;
+                    endif; ?>
 
                     </div>
                 </div>

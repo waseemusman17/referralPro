@@ -45,5 +45,16 @@ $(document).ready(function(){
         $('#counter_banner').html("<span>"+item+"</span> <span> / </span> <span>"+items+"</span>");
     }
 
+
+
+    $('.scroll-down-center,.scroll-down').on('click', function () {
+        var ele = $('.scrollDiv');
+        // this will search within the section
+        $("html, body").animate({
+             scrollTop: $(ele).offset().top
+        }, 1000);
+        return false;
+    });
+
   
 });

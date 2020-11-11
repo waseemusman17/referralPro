@@ -43,7 +43,7 @@
     </section>
 
     <!-- Company's Images Slider -->
-    <section class="cis-section">
+    <section class="cis-section scrollDiv">
         <div class="container">
             <div class="cis-content">
                 <p class="trusted">Trusted By</p>
@@ -118,96 +118,32 @@
                 </div>
 
                 <div class="svs-services">
+
+                    <?php $the_query = new WP_Query(array(
+                            'post_type' => 'Services',
+                            'order' => 'ASC'
+                        ));
+                    ?>
                     
-                    <div class="svs-box">
-                        <div class="svs-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/s1.png" alt="">
-                        </div>
-                        <div class="svs-box-info">
-                            <h6>Referral Marketing</h6>
-                            <p>Steady and proﬁtable referral traffic requires more than quality health care.</p>
-
-                            <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="svs-box">
-                        <div class="svs-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/s2.png" alt="">
-                        </div>
-                        <div class="svs-box-info">
-                            <h6>Graphic Design & Branding</h6>
-                            <p>Launching a new product or service? Want to redesign or revamp your current marketing materials?</p>
-
-                            <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="svs-box">
-                        <div class="svs-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/s3.png" alt="">
-                        </div>
-                        <div class="svs-box-info">
-                            <h6>Website Development</h6>
-                            <p>Accessibility and ease of use should always be your website’s top priorities.</p>
-
-                            <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="svs-box">
-                        <div class="svs-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/s4.png" alt="">
-                        </div>
-                        <div class="svs-box-info">
-                            <h6>Trade Shows & Events</h6>
-                            <p>Whether you are hosting or attending as an exhibitor, there are many crucial factors </p>
-
-                            <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="svs-box">
-                        <div class="svs-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/s5.png" alt="">
-                        </div>
-                        <div class="svs-box-info">
-                            <h6>Content Strategies</h6>
-                            <p>The average consumer views 5,000 or more ads every day. With that being.</p>
-
-                            <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="svs-box">
-                        <div class="svs-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/s6.png" alt="">
-                        </div>
-                        <div class="svs-box-info">
-                            <h6>Photo, Video & Radio Production</h6>
-                            <p>In a digital world, authentic photo and video content is becoming synonymous</p>
-
-                            <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="svs-box">
-                        <div class="svs-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/s7.png" alt="">
-                        </div>
-                        <div class="svs-box-info">
-                            <h6>Social Media Management</h6>
-                            <p>Did you know that 46% of users report unfollowing overly promotional brands</p>
-
-                            <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="svs-box">
-                        <div class="svs-img">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/s8.png" alt="">
-                        </div>
-                        <div class="svs-box-info">
-                            <h6>Short-term Projects</h6>
-                            <p>Does your company already have a dedicated marketing team?</p>
-
-                            <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        </div>
-                    </div>
+                    <?php if ( $the_query->have_posts() ) : 
+                        while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                     
+                            <div class="svs-box">
+                                <div class="svs-box-content">
+                                    <div class="svs-img">
+                                        <img src="<?php the_field('service_home_icone'); ?>" alt="">
+                                    </div>
+                                    <div class="svs-box-info">
+                                        <h6><?php the_field('service_home_title'); ?></h6>
+                                        <p><?php the_field('service_home_description'); ?></p>
+
+                                        <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php endwhile;
+                    endif; ?>
 
                 </div>
             </div>
@@ -232,42 +168,30 @@
                 <div class="pfs-slider">
                     <div class="owl-carousel owl-theme">
 
-                        <div class="item">
-                            <div class="pfs-item">
-                                <div class="pfs-item-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/p1.png" alt="">
-                                </div>
-                                <div class="pfs-item-info">
-                                    <h6>EXO TOE</h6>
-                                    <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
-                                    <a href="" class="pfs-item-btn">VIEW PROJECT <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pfs-item">
-                                <div class="pfs-item-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/p1.png" alt="">
-                                </div>
-                                <div class="pfs-item-info">
-                                    <h6>EXO TOE</h6>
-                                    <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
-                                    <a href="" class="pfs-item-btn">VIEW PROJECT <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                    <?php $the_query = new WP_Query(array(
+                            'post_type' => 'portfolio',
+                            'order' => 'ASC'
+                        ));
+                    ?>
+                    
+                    <?php if ( $the_query->have_posts() ) : 
+                        while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+                            <div class="item">
+                                <div class="pfs-item">
+                                    <div class="pfs-item-img">
+                                        <img src="<?php the_field('portfolio_image'); ?>" alt="">
+                                    </div>
+                                    <div class="pfs-item-info">
+                                        <h6><?php the_field('portfolio_title'); ?></h6>
+                                        <p><?php the_field('portfolio_description'); ?></p>
+                                        <a href="<?php the_field('portfolio_project_link'); ?>" class="pfs-item-btn">VIEW PROJECT <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="pfs-item">
-                                <div class="pfs-item-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/p1.png" alt="">
-                                </div>
-                                <div class="pfs-item-info">
-                                    <h6>EXO TOE</h6>
-                                    <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
-                                    <a href="" class="pfs-item-btn">VIEW PROJECT <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
+
+                        <?php endwhile;
+                    endif; ?>
 
                     </div>
                 </div>
