@@ -3,9 +3,10 @@ $(document).ready(function(){
     $('.cis-slider.owl-carousel').owlCarousel({
         loop:true,
         margin:50,
-        nav:true,
         dots:false,
+        nav:true,
         navText:["<img src='http://localhost/referral/wp-content/uploads/2020/11/icon-left.svg' >","<img src='http://localhost/referral/wp-content/uploads/2020/11/icon-right.svg' >"],
+        thumbs: false,
         responsive:{
             0:{
                 items:1
@@ -24,6 +25,7 @@ $(document).ready(function(){
     $('.pfs-slider .owl-carousel').owlCarousel({
         loop:true,
         margin:10,
+        thumbs: false,
         nav:true,
         items:1,
         loop:false,
@@ -45,8 +47,21 @@ $(document).ready(function(){
         $('#counter_banner').html("<span>"+item+"</span> <span> / </span> <span>"+items+"</span>");
     }
 
+    // Testimonial Section Slider
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        dots:true,
+        items:1,
+        thumbs: true,
+        thumbImage: true,
+        thumbContainerClass: 'owl-thumbs',
+        thumbItemClass: 'owl-thumb-item'
 
+    });
 
+    // On Click Scroll to next section
     $('.scroll-down-center,.scroll-down').on('click', function () {
         var ele = $('.scrollDiv');
         // this will search within the section
@@ -56,5 +71,13 @@ $(document).ready(function(){
         return false;
     });
 
+
+
+    // Mobile Menu
+    $(".nav-toggler").click(function () {
+        $('.menu-main-menu-container').slideToggle('menu-active');
+        $(this).toggleClass('nav-active');
+       
+    });
   
 });

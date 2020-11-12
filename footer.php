@@ -1,31 +1,25 @@
     <footer class="site-footer">
         <div class="footer-left">
             <div class="footer-logo">
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/logo.svg" alt="">
+                <img src="<?php the_field('footer_logo', 'option'); ?>" alt="">
             </div>
-            <p class="my-4">Kelsey started her own company nearly three years ago. Before ReferralPRO, she spent 5+ years in the medical field. Her experience as a patient care.</p>
+            <p class="my-4"><?php the_field('footer_description', 'option'); ?></p>
 
             <div class="footer-contact">
-                <h6><span class="green">Take Advantage</span> Of Expert Knowledge</h6>
-                <p class="my-1">Feel free to get in touch with us via email or phone</p>
+                <h6><?php the_field('footer_contact_title', 'option'); ?></h6>
+                <p class="my-1"><?php the_field('footer_contact_description', 'option'); ?></p>
                 
                 <div class="contact-links d-flex my-5">
                     <span>
                         Call Now!
-                        <a class="d-block" href="tel:(852)112-8455">(852)112-8455</a>
+                        <a class="d-block" href="tel:<?php the_field('footer_contact_number', 'option'); ?>"><?php the_field('footer_contact_number', 'option'); ?></a>
                     </span>
                     <span>
                         Email Us Now!
-                        <a class="d-block" href="mailto:alex.reid@mail.com">alex.reid@mail.com</a>
+                        <a class="d-block" href="mailto:<?php the_field('footer_contact_email', 'option'); ?>"><?php the_field('footer_contact_email', 'option'); ?></a>
                     </span>
                 </div>
 
-                <!-- <ul class="footer-menu">
-                    <li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/green-arrow.svg" alt=""> Service</a></li>
-                    <li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/green-arrow.svg" alt=""> Portfolio</a></li>
-                    <li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/green-arrow.svg" alt=""> Testimonials</a></li>
-                    <li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/green-arrow.svg" alt=""> Careers</a></li>
-                </ul> -->
                 <?php
                     wp_nav_menu( array( 
                         'theme_location' => 'header-menu', 
@@ -37,9 +31,11 @@
                     <p>Follow Us </p>
                     <img class="mx-4" src="<?php echo get_template_directory_uri();?>/assets/img/footer-line.svg" alt="">
                     <div class="footer-icons d-flex">
-                        <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <?php if( have_rows('social_media_links','option') ):
+                            while( have_rows('social_media_links','option') ) : the_row(); ?>   
+                                <a href="<?php the_sub_field('social_link' ,'option'); ?>"><?php the_sub_field('social_icon' ,'option'); ?></a>
+                            <?php endwhile;
+                        endif; ?>
                     </div>
                 </div>
             </div>
@@ -50,44 +46,52 @@
             <h5>Ready to Start a Project?</h5>
             <p>We’d love to hear from you!</p>
 
-            <form action="" class="mt-5">
+            <!-- <form action="" class="mt-5">
                 <div class="form-row">
                     <div class="form-group col-md-6 pr-3">
                         <input type="text" class="form-control" placeholder="Name *" required>
+                        [text* Name class:form-control placeholder "Name *"]
                     </div>
                     <div class="form-group col-md-6 pl-3">
                         <input type="email" class="form-control" placeholder="Email Address *" required>
+                        [email* email-756 class:form-control placeholder "Email Address *"]
                     </div>
                 </div>
                 <div class="form-row my-3">
                     <div class="form-group col-md-6 pr-3">
                         <input type="text" class="form-control" placeholder="Phone No. *" required>
+                        [tel* tel-64 class:form-control placeholder "Phone No. *"]
+                        
                     </div>
                     <div class="form-group col-md-6 pl-3">
-                        <input type="email" class="form-control" placeholder="Website URL *" required>
+                        <input type="text" class="form-control" placeholder="Website URL *" required>
+                        [url* url-347 class:form-control placeholder "Website URL *"]
                     </div>
                 </div>
                 <div class="form-group">
                     <textarea class="form-control"  placeholder="Message *" rows="7" required></textarea>
+                    [textarea* textarea-729 class:form-control placeholder "Message *"]
                 </div>
 
                 <div class="footer-form-btn">
                     <button type="submit" class="f-form-btn">Submit Now <img src="./assets/img/btn-arrow.svg" alt=""></button>
+                    [submit class:f-form-btn "Submit Now"]
                 </div>
 
-            </form>
+            </form> -->
+
+            <?php echo do_shortcode('[contact-form-7 id="204" title="Footer Contact Form"]'); ?>
+            
         </div>
     </footer>
 
     <div class="copyright">
-        <div class="container">
-            <div class="copyright-content d-flex justify-content-between py-3 align-items-center">
-                <p>Referral Pro 2020. All rights reserved.</p>
-                <ul class="d-flex">
-                    <li><a href="">Privacy Policy</a></li>
-                    <li><a href="">Terms of Use</a></li>
-                </ul>
-            </div>
+        <div class="copyright-content d-flex justify-content-between py-2 align-items-center">
+            <p><?php the_field('copyright_text', 'option'); ?></p>
+            <ul class="d-flex">
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms of Use</a></li>
+            </ul>
         </div>
     </div>
     
@@ -95,6 +99,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://gijsroge.github.io/owl-carousel2-thumbs/assets/OwlCarousel2Thumbs.min.js"></script>
 
     <script src="<?php echo get_template_directory_uri();?>/assets/js/custom.js"></script>
 

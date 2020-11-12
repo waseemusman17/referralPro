@@ -9,21 +9,23 @@
 
 
     <!-- Home Main banner -->
-    <section class="hmb-section" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/main-banner.png');">
+    <section class="hmb-section" style="background-image: url('<?php the_field('home_page_banner_image'); ?>">
         <div class="container">
             <div class="hmb-main">
                 <div class="hmb-content">
-                    <h3>Building Connections Through Creative Marketing</h3>
+                    <h3><?php the_field('home_page_banner_title'); ?></h3>
                     <div class="hmb-btn">
-                        <a href="" class="hmb-start-btn">Get Started <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        <a href="" class="hmb-learn-btn">Learn More <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                        <a href="<?php the_field('home_page_banner_first_button'); ?>" class="hmb-start-btn">Get Started <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                        <a href="<?php the_field('home_page_banner_second_button'); ?>" class="hmb-learn-btn">Learn More <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
                     </div>
                 </div>
 
                 <div class="social-link">
-                    <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <?php if( have_rows('social_media_links','option') ):
+                        while( have_rows('social_media_links','option') ) : the_row(); ?>   
+                            <a href="<?php the_sub_field('social_link' ,'option'); ?>"><?php the_sub_field('social_icon' ,'option'); ?></a>
+                        <?php endwhile;
+                    endif; ?>    
                 </div>
 
                 <div class="scroll-down">
@@ -48,30 +50,17 @@
             <div class="cis-content">
                 <p class="trusted">Trusted By</p>
                 <div class="cis-slider owl-carousel owl-theme">
-                    <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/c1.png" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/c2.png" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/c3.png" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/c4.png" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/c1.png" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/c2.png" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/c3.png" alt="">
-                    </div>
-                    <div class="item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/c4.png" alt="">
-                    </div>
+                    
+                    <?php if( have_rows('company_logos') ):
+                        while( have_rows('company_logos') ) : the_row(); ?>    
+
+                            <div class="item">
+                                <img src="<?php the_sub_field('company_logo_image'); ?>" alt="">
+                            </div>
+
+                        <?php endwhile;
+                    endif; ?>
+
                 </div>
             </div>
         </div>
@@ -82,25 +71,21 @@
         <div class="container">
             <div class="aus-content">
                 <div class="aus-img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/about.png" alt="">
+                    <img src="<?php the_field('about_us_image'); ?>" alt="">
                     <div class="aus-social-link">
-                        <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <?php if( have_rows('social_media_links','option') ):
+                            while( have_rows('social_media_links','option') ) : the_row(); ?>   
+                                <a href="<?php the_sub_field('social_link' ,'option'); ?>"><?php the_sub_field('social_icon' ,'option'); ?></a>
+                            <?php endwhile;
+                        endif; ?>
                     </div>
                 </div>
                 <div class="aus-info">
                     <div class="aus-detail">
-                        <h1>Kelsey Bastian</h1>
-                        <p class="aus-info-title">Founder / President of ReferralPRO</p>
+                        <h1><?php the_field('about_us_title'); ?></h1>
+                        <p class="aus-info-title"><?php the_field('about_us_subtitle'); ?></p>
 
-                        <p>
-                            Kelsey started her own company nearly three years ago. Before ReferralPRO, she spent 5+ years in the medical field. Her experience as a patient care coordinator to a clinical assistant for physicians (and just about everything in-between) has given her valuable insight into clinical operations & internal processes.
-                            <br><br>
-                            Kelsey’s passion is marketing. She had the opportunity to work with a marketing agency for a year. This helped her to build a diverse skillset in various industries. In 2018, Kelsey launched ReferralPRO. Her knowledge of the medical field and passion for marketing differentiates her from her competitors. She believes in using a research and data-driven approach when making key marketing and business decisions, while still maintaining her creative roots.
-                            <br><br>
-                            Kelsey is a go-getter. She values the relationships she’s established over the years and feels fortunate to have met and worked with industry leaders in Des Moines, Iowa and across the United States. Kelsey’s goal is to help businesses fuel growth and achieve success.
-                        </p>
+                        <p><?php the_field('about_us_message'); ?></p>
                     </div>
                 </div>
             </div>
@@ -112,9 +97,9 @@
         <div class="container">
             <div class="svs-content">
                 <div class="svs-title">
-                    <h1>Services</h1>
-                    <p class="svs-subheading">There Is No “One Size Fits All” Approach To Marketing. </p>
-                    <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, ReferralPRO is here to help!</p>
+                    <h1><?php the_field('home_service_title'); ?></h1>
+                    <p class="svs-subheading"><?php the_field('home_service_subtitle'); ?></p>
+                    <p><?php the_field('home_service_description'); ?></p>
                 </div>
 
                 <div class="svs-services">
@@ -142,7 +127,9 @@
                                 </div>
                             </div>
 
-                        <?php endwhile;
+                        <?php
+                            wp_reset_query();
+                        endwhile;
                     endif; ?>
 
                 </div>
@@ -157,10 +144,10 @@
                 
                 <div class="pfs-title">
                     <div class="pfs-title-content">
-                        <h1>Portfolio</h1>
-                        <a href="" class="pfs-btn">All Project <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                        <h1><?php the_field('home_portfolio_title'); ?></h1>
+                        <a href="<?php the_field('home_portfolio_link'); ?>" class="pfs-btn">All Project <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
                     </div>
-                    <p>We will work with you to develop a customized plan for your long-term or short-term marketing needs. Whether you have a clear vision or need some guidance, we’re here to help!</p>
+                    <p><?php the_field('home_portfolio_description'); ?></p>
                 </div>
 
                 
@@ -185,7 +172,7 @@
                                     <div class="pfs-item-info">
                                         <h6><?php the_field('portfolio_title'); ?></h6>
                                         <p><?php the_field('portfolio_description'); ?></p>
-                                        <a href="<?php the_field('portfolio_project_link'); ?>" class="pfs-item-btn">VIEW PROJECT <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                                        <a href="<?php echo get_permalink();?>" class="pfs-item-btn">VIEW PROJECT <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -200,6 +187,32 @@
         </div>
     </section>
 
+    <!-- Testimonials -->
+    <section class="testimonial-section"> 
+        <div class="container">
+            <div class="testimonial-content">
+                <h3 class="text-center">Client Testimonials </h3>
+
+                <div class="owl-carousel owl-theme">
+
+                    <?php if( have_rows('client_reviews', 21) ):
+                        while( have_rows('client_reviews', 21) ) : the_row(); ?>
+
+                            <div class="item">
+                                <p><?php the_sub_field('client_message' , 21); ?></p>
+                                <img src="<?php the_sub_field('client_image' , 21); ?>" alt="">
+                                <p class="aut-name"><?php the_sub_field('client_name' , 21); ?></p>
+                                <p class="aut-info"><?php the_sub_field('client_information' , 21); ?></p>
+                            </div>
+
+                        <?php endwhile;
+                    endif; ?>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 
 <?php get_footer(); ?>
