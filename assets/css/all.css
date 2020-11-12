@@ -1316,7 +1316,9 @@ p.aus-info-title {
     padding:30px 0px 50px;
     max-width: 500px;
 }
-
+.pdb-img img {
+    width: 100%;
+}
 
 .dcs-section{
     padding:100px 0px ;
@@ -1626,6 +1628,11 @@ p.aus-info-title {
     .read-btn{
         width: 190px;
     }
+
+    /* Testimonial Page */
+    .client-img{
+        width: 20%;
+    }
 }
 
 
@@ -1677,6 +1684,14 @@ p.aus-info-title {
     }
     .read-btn {
         width: 170px;
+    }
+    
+    /* Testimonaial Secction */
+    .client-img {
+        width: 25%;
+    }
+    .client-review-section {
+        width: 75%;
     }
 }
 
@@ -1829,6 +1844,36 @@ p.aus-info-title {
         font-size: 12px;
         height: 45px;
     }
+
+
+    /* Testimonial Page */
+    .review-box{
+        flex-flow: row wrap;
+    }
+    .client-img {
+        width: 100%;
+    }
+    .client-img img{
+        position: relative;
+    }
+    .client-review-section {
+        width: 100%;
+    }
+
+    /* Portfolio Details Page */
+    .pdb-info {
+        order: 2;
+    }
+    .pdb-img{
+        order:1;
+        margin-bottom: 30px;
+    }
+    .dcs-section{
+        padding: 100px 0px 0px;
+    }
+    .pbd-section{
+        padding: 50px 0px;
+    }
 }
 
 
@@ -1920,6 +1965,7 @@ p.aus-info-title {
     }
     .site-menu nav ul li a{
         color: #000;
+        padding: 0px;
     }
     .contact-us-link a{
         width: 130px;
@@ -2112,5 +2158,71 @@ p.aus-info-title {
     .cci-info ul li{
         font-size: 14px;
         padding-bottom: 5px;
+    }
+
+    /* Portfolio Page */
+    .wps-section{
+        padding-bottom: 0px;
+    }
+
+
+    /* Testimonial Page */
+    .tss-content h6{
+        font-size: 19px;
+        line-height: 35px;
+        margin-bottom: 30px;
+        
+    }
+    .tss-section{
+        padding: 50px 0px;
+    }
+    .client-img::before{
+        display: none;
+    }
+    .client-img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .client-img img{
+        top: 0;
+        left: 0;
+    }
+    .client-review-section{
+        padding-top: 20px;
+    }
+    .review-box{
+        margin-bottom: 30px;
+    }
+
+    /* Portfolio Detail Page */
+    .pdb-section::before{
+        display: none;
+    }
+    .pdb-section{
+        padding: 50px 0px 0px;
+    }
+    .port-btn{
+        width: 170px;
+        height: 45px;
+        font-size: 14px;
+    }
+    .dcs-section{
+        padding: 50px 0px 0px;
+    }
+
+    .pmi-content{
+        height: 200px;
+    }
+    .pmi-content img{
+        padding:30px;
+    }
+    .pdb-content,
+    .dcs-content,
+    .pmi-content,
+    .pbd-content{
+        max-width: 100%;
+    }
+    .pbd-img .pmi-content{
+        height: 220px;
     }
 }
