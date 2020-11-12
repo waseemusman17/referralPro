@@ -3,7 +3,6 @@ $(document).ready(function(){
     $('.cis-slider.owl-carousel').owlCarousel({
         loop:true,
         margin:50,
-        dots:false,
         nav:true,
         navText:["<img src='http://localhost/referral/wp-content/uploads/2020/11/icon-left.svg' >","<img src='http://localhost/referral/wp-content/uploads/2020/11/icon-right.svg' >"],
         thumbs: false,

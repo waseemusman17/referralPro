@@ -33,7 +33,7 @@
                     ?>
                     </nav>
                     <div class="contact-us-link">
-                        <a href="">Contact Us <img src="<?php echo get_template_directory_uri();?>/assets/img/btn-arrow.svg" alt=""></a>
+                        <a href="<?php echo site_url(); ?>/contact">Contact Us <img src="<?php echo get_template_directory_uri();?>/assets/img/btn-arrow.svg" alt=""></a>
                     </div>
                     <div class="nav-toggler">
                         <span></span>

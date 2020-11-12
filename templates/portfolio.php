@@ -51,7 +51,7 @@
                                     <div class="pfs-item-info">
                                         <h6><?php the_field('portfolio_title'); ?></h6>
                                         <p><?php the_field('portfolio_description'); ?></p>
-                                        <a href="<?php the_field('portfolio_project_link'); ?>" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
+                                        <a href="<?php echo get_permalink();?>" class="port-btn"><img class="mr-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/arrow-up.svg" alt=""> Visit Website</a>
                                     </div>
                                 </div>
                             </div>

@@ -122,7 +122,7 @@
                                         <h6><?php the_field('service_home_title'); ?></h6>
                                         <p><?php the_field('service_home_description'); ?></p>
 
-                                        <a href="" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                                        <a href="<?php echo site_url(); ?>/contact" class="svs-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
                                     </div>
                                 </div>
                             </div>

@@ -20,14 +20,14 @@
         </section>
 
         <!-- Post Details Content -->
-        <section class="pdc-section">
+        <section class="pdc-section scrollDiv">
             <div class="container">
                 <div class="pdc-content">
                     <div class="row">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 pdc-paragraph">
                             <?php the_field('service_content_left');?>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 pdc-paragraph">
                             <?php the_field('service_content_left');?>
                         </div>
                     </div>
