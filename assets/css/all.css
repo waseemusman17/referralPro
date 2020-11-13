@@ -829,7 +829,9 @@ p.aus-info-title {
 .copyright-content ul li:first-child{
     padding-right: 25px;
 }
-
+#menu-footer-menu{
+    display: flex;
+}
 
 
 
@@ -1141,6 +1143,7 @@ p.aus-info-title {
     color: #fff;
     font-family: 'Anvire-Black';
     border-radius: 70px;
+    padding-right: 40px;
 }
 .cfs-form-btn img {
     margin-left: 10px;
@@ -1148,6 +1151,19 @@ p.aus-info-title {
 .submit-btn {
     text-align: right;
     padding: 30px 0px;
+    position: relative;
+}
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    background-image: url(http://localhost/referral/wp-content/uploads/2020/11/btn-arrow.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 23px;
+    z-index: 999;
+    right: 50px;
 }
 .cfs-content h5{
     font-family: 'Anvire-Heavy';
@@ -1176,6 +1192,7 @@ p.aus-info-title {
     color: #000 !important;
     text-decoration: none !important;
     padding: .375rem 0px;
+    text-align: left;
 }
 .faq-btn::before{
     content: '-';
@@ -1633,6 +1650,12 @@ p.aus-info-title {
     .client-img{
         width: 20%;
     }
+
+    /* Contact Page */
+    .cls-content{
+        padding: 30px 50px;
+        margin-top: -70px;
+    }
 }
 
 
@@ -1692,6 +1715,18 @@ p.aus-info-title {
     }
     .client-review-section {
         width: 75%;
+    }
+
+
+    /* Contact Us Page */
+    .hmb-copyright p{
+        font-size: 12px;
+    }
+    .cls-content{
+        padding: 30px;
+    }
+    .cls-box-info a{
+        font-size: 12px;
     }
 }
 
@@ -1874,6 +1909,25 @@ p.aus-info-title {
     .pbd-section{
         padding: 50px 0px;
     }
+    .pmi-content{
+        height: 400px;
+    }
+
+    /* Contact Us Page */
+    .cls-content{
+        max-width: 100%;
+        padding: 30px;
+        margin-top: 30px;
+    }
+    .cfs-section{
+        padding: 50px 0px;
+    }
+    .cfs-content{
+        max-width: 100%;
+    }
+    .faq-content{
+        max-width: 100%;
+    }
 }
 
 
@@ -1915,7 +1969,7 @@ p.aus-info-title {
         display: block;
         width: 100%;
         height: 2px;
-        background: #0b2738;
+        background: #000;
         transition: 0.4s;
     }
     .nav-toggler span:nth-child(2) {
@@ -1926,7 +1980,9 @@ p.aus-info-title {
         top: 0;
         bottom: 0;
     }
-
+    .single-portfolio .nav-toggler span{
+        background-color: #fff;
+    }
     .nav-active span:first-child {
         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
         transform: rotate(-45deg) translate(-11px, 6px);
@@ -2081,6 +2137,18 @@ p.aus-info-title {
     .footer-right .form-control{
         padding: 0px;
     }
+    .footer-menu a{
+        font-size: 14px;
+    }
+    .f-form-btn{
+        width: 170px;
+        height: 45px;
+    }
+    .footer-form-btn::before{
+        width: 15px;
+        height: 35px;
+        left: 125px;
+    }
     .copyright-content p{
         font-size: 10px;
     }
@@ -2108,6 +2176,9 @@ p.aus-info-title {
         left: -20px;
         width: 60px;
         height: 60px;
+    }
+    .spt-post-box{
+        padding-bottom: 50px;
     }
     .quote-btn{
         width: 130px;
@@ -2158,6 +2229,9 @@ p.aus-info-title {
     .cci-info ul li{
         font-size: 14px;
         padding-bottom: 5px;
+    }
+    .cci-info .quote-btn img{
+        width: 15px;
     }
 
     /* Portfolio Page */
@@ -2224,5 +2298,29 @@ p.aus-info-title {
     }
     .pbd-img .pmi-content{
         height: 220px;
+    }
+
+
+    /* Contact Us PAge */
+    .cls-content{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+    .cls-box{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .cfs-form-btn{
+        width: 170px;
+        height: 45px;
+        font-size: 14px;
+    }
+    .submit-btn::before{
+        width: 15px;
+        height: 35px;
+    }
+    .faq-btn{
+        font-size: 14px;
     }
 }

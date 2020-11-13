@@ -9,10 +9,10 @@
 ?>
 
     <!-- Site Inner Pages Banner -->
-    <section class="sip-section" style="background-image:url('<?php echo get_template_directory_uri();?>/assets/img/service-banner.png')">
+    <section class="sip-section" style="background-image:url('<?php the_field('service_banner_image'); ?>')">
         <div class="container">
             <div class="sip-content">
-                <h2>Services</h2>
+                <h2><?php the_field('service_banner_text'); ?></h2>
 
                 <div class="scroll-down-center">
                     <a href="javascript:void(0)"><img src="http://localhost/referral/wp-content/themes/referralPro/assets/img/scroll-center.svg" alt=""></a>
@@ -29,7 +29,7 @@
     <section class="spt-section scrollDiv">
         <div class="container">
             <div class="spt-content">
-                <p class="spt-title">Referralpro Has Helped Businesses Across The U.S. Generate Steady And Proﬁtable Referrals With Result-Driven Marketing Strategies, Captivating Website Designs, Social Media, And More.</p>
+                <p class="spt-title"><?php the_field('all_service_heading'); ?></p>
             
                 <div class="spt-post">
                     
@@ -47,7 +47,7 @@
                                     <h4><?php the_title(); ?></h4>
                                     <p class="py-4"><?php the_excerpt(); ?></p>
                                     <div class="spt-box-btn">
-                                        <a href="" class="quote-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                                        <a href="<?php echo site_url(); ?>/contact" class="quote-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
                                         <a href="<?php echo get_permalink();?>" class="read-btn">Read More <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
                                     </div>
                                 </div>
@@ -56,7 +56,9 @@
                                 </div>
                             </div>
 
-                        <?php endwhile; ?>
+                        <?php 
+                            wp_reset_query();
+                        endwhile; ?>
                     <?php endif; ?>
                 </div>
             
@@ -69,11 +71,11 @@
         <div class="container">
             <div class="crg-content">
                 <div class="crg-title">
-                    <h2>Connect.Retain.<span class="green">Grow.</span></h2>
-                    <a href="" class="crg-btn">View Portfolio <img src="http://localhost/referral/wp-content/themes/referralPro/assets/img/btn-arrow.svg" alt=""></a>
+                    <h2><?php the_field('crg_heading'); ?></h2>
+                    <a href="<?php the_field('crg_button_link'); ?>" class="crg-btn">View Portfolio <img src="http://localhost/referral/wp-content/themes/referralPro/assets/img/btn-arrow.svg" alt=""></a>
                 </div>
                 <div class="crg-img">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/crg-banner.png" alt="">
+                    <img src="<?php the_field('crg_image'); ?>" alt="">
                 </div>
             </div>
         </div>
@@ -82,40 +84,22 @@
     <!-- Other Packages -->
     <section class="ops-section">
         <div class="container">
-            <h2 class="text-center">Other Packages</h2>
+            <h2 class="text-center"><?php the_field('other_package_title'); ?></h2>
             <div class="ops-content">
-                <div class="ops-box">
-                    <h6>Marketing Collateral Design Packages</h6>
-                    <p>We can create ready-to-use brand-consistent marketing material templates that will streamline your content creation process. We can create templates for:  social media posts, eNewsletters, brochures, announcements and more.</p>
-                    <div class="ops-box-btn">
-                        <a href="" class="quote-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        <a href="" class="pricing-varies">Pricing Varies</a>
-                    </div>
-                </div>
-                <div class="ops-box">
-                    <h6>Marketing Collateral Design Packages</h6>
-                    <p>We can create ready-to-use brand-consistent marketing material templates that will streamline your content creation process. We can create templates for:  social media posts, eNewsletters, brochures, announcements and more.</p>
-                    <div class="ops-box-btn">
-                        <a href="" class="quote-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        <a href="" class="pricing-varies">Pricing Varies</a>
-                    </div>
-                </div>
-                <div class="ops-box">
-                    <h6>Marketing Collateral Design Packages</h6>
-                    <p>We can create ready-to-use brand-consistent marketing material templates that will streamline your content creation process. We can create templates for:  social media posts, eNewsletters, brochures, announcements and more.</p>
-                    <div class="ops-box-btn">
-                        <a href="" class="quote-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        <a href="" class="pricing-varies">Pricing Varies</a>
-                    </div>
-                </div>
-                <div class="ops-box">
-                    <h6>Marketing Collateral Design Packages</h6>
-                    <p>We can create ready-to-use brand-consistent marketing material templates that will streamline your content creation process. We can create templates for:  social media posts, eNewsletters, brochures, announcements and more.</p>
-                    <div class="ops-box-btn">
-                        <a href="" class="quote-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
-                        <a href="" class="pricing-varies">Pricing Varies</a>
-                    </div>
-                </div>
+
+                <?php if( have_rows('other_package_box') ):
+                    while( have_rows('other_package_box') ) : the_row(); ?> 
+                        <div class="ops-box">
+                            <h6><?php the_sub_field('other_package_heading'); ?></h6>
+                            <p><?php the_sub_field('other_package_description'); ?></p>
+                            <div class="ops-box-btn">
+                                <a href="<?php the_sub_field('other_package_quote_link'); ?>" class="quote-btn">Get A Quote <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                                <a href="<?php the_sub_field('other_package_price_link'); ?>" class="pricing-varies">Pricing Varies</a>
+                            </div>
+                        </div>
+                    <?php endwhile;
+                endif; ?>
+
             </div>
         </div>
     </section>

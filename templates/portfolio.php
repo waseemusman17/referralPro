@@ -10,10 +10,10 @@
 
 
     <!-- Site Inner Pages Banner -->
-    <section class="sip-section" style="background-image:url('<?php echo get_template_directory_uri();?>/assets/img/portfolio-banner.png')">
+    <section class="sip-section" style="background-image:url('<?php the_field('portfolio_banner_image'); ?>')">
         <div class="container">
             <div class="sip-content">
-                <h2>Portfolio</h2>
+                <h2><?php the_field('portfolio_banner_text'); ?></h2>
 
                 <div class="scroll-down-center">
                     <a href="javascript:void(0)"><img src="http://localhost/referral/wp-content/themes/referralPro/assets/img/scroll-center.svg" alt=""></a>

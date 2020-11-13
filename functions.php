@@ -22,7 +22,8 @@ add_theme_support('custom-logo' , array(
 function wpb_custom_new_menu() {
     register_nav_menus(
         array(
-            'header-menu' => __( 'Header Menu' )
+            'header-menu' => __( 'Header Menu' ),
+            'extra-menu' => __( 'Extra Menu' )
         )
     );
 }

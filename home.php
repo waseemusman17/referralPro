@@ -73,9 +73,9 @@
                 <div class="aus-img">
                     <img src="<?php the_field('about_us_image'); ?>" alt="">
                     <div class="aus-social-link">
-                        <?php if( have_rows('social_media_links','option') ):
-                            while( have_rows('social_media_links','option') ) : the_row(); ?>   
-                                <a href="<?php the_sub_field('social_link' ,'option'); ?>"><?php the_sub_field('social_icon' ,'option'); ?></a>
+                        <?php if( have_rows('about_social_links') ):
+                            while( have_rows('about_social_links') ) : the_row(); ?>   
+                                <a href="<?php the_sub_field('about_social_link'); ?>"><?php the_sub_field('about_social_icon'); ?></a>
                             <?php endwhile;
                         endif; ?>
                     </div>
@@ -145,7 +145,7 @@
                 <div class="pfs-title">
                     <div class="pfs-title-content">
                         <h1><?php the_field('home_portfolio_title'); ?></h1>
-                        <a href="<?php the_field('home_portfolio_link'); ?>" class="pfs-btn">All Project <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
+                        <a href="<?php echo site_url(); ?>/portfolio-page" class="pfs-btn">All Project <img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn-arrow.svg" alt=""></a>
                     </div>
                     <p><?php the_field('home_portfolio_description'); ?></p>
                 </div>

@@ -88,10 +88,11 @@
     <div class="copyright">
         <div class="copyright-content d-flex justify-content-between py-2 align-items-center">
             <p><?php the_field('copyright_text', 'option'); ?></p>
-            <ul class="d-flex">
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Terms of Use</a></li>
-            </ul>
+            <?php
+                wp_nav_menu( array( 
+                    'theme_location' => 'extra-menu' ) 
+                ); 
+            ?>
         </div>
     </div>
     
