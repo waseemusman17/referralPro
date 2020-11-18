@@ -96,8 +96,10 @@
                         <?php endwhile; ?>
                     <?php endif; ?>
 
-
+                      
                 </div>
+
+                <a href="<?php echo site_url();?>/website-portfolio" class="view-all">View All</a>
             </div>
         </div>
     </section>
@@ -113,7 +115,8 @@
                     <?php $the_query = new WP_Query(array(
                             'post_type' => 'portfolio',
                             'project_category' => 'flyers',
-                            'order' => 'ASC'
+                            'order' => 'ASC',
+                            'posts_per_page' => 2 
                         ));
                     ?>
                     
@@ -132,8 +135,9 @@
                         <?php endwhile; ?>
                     <?php endif; ?>
 
-
+                    
                 </div>
+                <a href="<?php echo site_url();?>/design-portfolio" class="view-all">View All</a>
             </div>
         </div>
     </section>

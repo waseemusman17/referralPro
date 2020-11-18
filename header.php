@@ -23,7 +23,11 @@
         <div class="container">
             <div class="header-row">
                 <div class="site-log">
-                    <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/img/logo.svg" alt=""></a>
+                    <?php 
+                        $custom_logo_id = get_theme_mod( 'custom_logo' );
+                        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    ?>
+                    <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo $image[0]; ?>" alt=""></a>
                 </div>
                 <div class="site-menu">
                     <nav>
